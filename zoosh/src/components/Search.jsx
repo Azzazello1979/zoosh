@@ -14,10 +14,9 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    
-    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=529dae3d&t=${this.state.movie}`)
+    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=529dae3d&t=${this.state.movie}&plot=full`)
     .then(response => {
-      console.log(response.data)
+      this.props.store(response);
     })
     .catch(error => {
       return console.log('omdbapi call error: ', error.message)

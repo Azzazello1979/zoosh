@@ -27,6 +27,12 @@ class Listing extends Component {
     ]
   };
 
+  updateResults = results => {
+    this.setState({
+      results
+    })
+  }
+
   render() {
     return (
       <div className="container">
