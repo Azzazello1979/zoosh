@@ -3,6 +3,7 @@ import "./ResultCard.css";
 import CoverImg from "./../img/mov.jpg";
 import axios from 'axios';
 
+
 const ResultCard = props => {
   const { result } = props;
 
