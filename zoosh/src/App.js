@@ -8,9 +8,11 @@ class App extends Component {
     results: []
   }
 
-  storeResults = results => {
+  storeResult = result => {
+    const current = [...this.state.results];
+    current.push(result);
     this.setState({
-      results
+      results: current
     });
     console.log('App.js: ', this.state.results);
   }
@@ -18,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-            <Search store={this.storeResults} />
+            <Search store={this.storeResult} />
             <Listing />
       </div>
     );
