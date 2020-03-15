@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const ResultCard = props => {
   const { result } = props;
-  console.log(result);
+  
   const remove = id => {
     props.remove(id);
   }
@@ -32,7 +32,7 @@ const ResultCard = props => {
   } else {
     wikiLinks = result.wikiArray.map((wikiLink, index) => {
       return(
-        <a href={wikiLink} target="_blank" rel="noopener noreferrer"><li>{wikiLink}</li></a>
+        <a href={wikiLink} target="_blank" rel="noopener noreferrer"><li key={ `${wikiLink}_${index}` }>{wikiLink}</li></a>
       )
     })
   }
