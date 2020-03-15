@@ -15,4 +15,16 @@
 
 .wikiLinks{
     margin-top:30px;
+    text-align:left;
 }
+
+.wikiLinks a{
+    color:darkolivegreen;
+}
+.wikiLinks a:hover{
+    color:yellowgreen;
+}
+.wikiLinks li{
+    margin-bottom: 5px;
+}
+

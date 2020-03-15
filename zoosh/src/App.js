@@ -13,18 +13,17 @@ class App extends Component {
     let currentMovies = [...this.state.results];
     let currentMovIDs = [...this.state.movIDs];
 
-    if(!currentMovIDs.includes(result.imdbID)){
+    if (!currentMovIDs.includes(result.imdbID)) {
       currentMovIDs.push(result.imdbID);
       currentMovies.unshift(result);
     } else {
-      console.log('this movie is already stored, skipping');
+      console.log("this movie is already stored, skipping");
     }
-    
+
     this.setState({
       results: currentMovies,
       movIDs: currentMovIDs
     });
-
   };
 
   removeMovie = id => {
@@ -45,7 +44,6 @@ class App extends Component {
     this.setState({
       results: currentMovies
     });
-  
   };
 
   render() {
