@@ -6,6 +6,8 @@ const Listing = props => {
 
   console.log('Listing.jsx results: ', results);
 
+  let note = results.length > 0 ? ('results: ' + results.length) : 'search above';
+
   const remove = id => {
     props.remove(id);
   }
@@ -16,7 +18,7 @@ const Listing = props => {
   
     return (
       <div className="container">
-        
+        <p>{note}</p>
         <div className="row">
           <div className="col s10 offset-s1">
             {results.map(result => {

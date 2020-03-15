@@ -10,7 +10,7 @@ class App extends Component {
 
   storeResult = result => {
     const current = [...this.state.results];
-    current.push(result);
+    current.unshift(result);
     this.setState({
       results: current
     });
