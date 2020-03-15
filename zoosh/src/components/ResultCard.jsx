@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const ResultCard = props => {
   const { result } = props;
-
+  console.log(result);
   const remove = id => {
     props.remove(id);
   }
@@ -48,14 +48,15 @@ const ResultCard = props => {
           <p className="my-title">{result.Title}</p>
           <i className="material-icons right">more_vert</i>
         </span>
-        <p>
-          Year: {result.Year} Genre: {result.Genre}
-        </p>
+        <p>Year: {result.Year} Genre: {result.Genre}</p>
+        <p>Director: {result.Director}</p>
+        <p>Actors: {result.Actors}</p>
       </div>
       <div className="card-reveal">
         <span className="card-title grey-text text-darken-4">
-          <p className="my-title">{result.Title}</p>
           <i className="material-icons right">close</i>
+          <p className="my-title">{result.Title}</p>
+          <div className="poster"><img src={result.Poster} alt="movie poster" /></div>
         </span>
         <p>{result.Plot}</p>
         <span>
