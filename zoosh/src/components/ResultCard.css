@@ -1,38 +1,43 @@
-.my-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    min-width:180px;
+.my-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 180px;
 }
 
-.my-image{
-    width: 200px !important;
-    margin: 20px auto 0px auto;
+.my-image {
+  width: 200px !important;
+  margin: 20px auto 0px auto;
 }
 
-.my-title{
-    font-weight:bold;
+.my-title {
+  font-weight: bold;
 }
 
-.wikiLinks{
-    margin-top:30px;
-    text-align:left;
+.wikiLinks {
+  margin-top: 30px;
+  text-align: left;
 }
 
-.wikiLinks a{
-    color:darkolivegreen;
+.wikiLinks a {
+  color: #0A6447;
 }
-.wikiLinks a:hover{
-    color:yellowgreen;
+.wikiLinks a:hover {
+  color: #1ee9a7;
 }
-.wikiLinks li{
-    margin-bottom: 5px;
-}
-.poster{
-    margin:0 auto;
-}
-.poster img{
-    width: 80%;
-    margin: 0 auto;
+.wikiLinks a:visited {
+  color: black;
 }
 
+.wikiLinks li {
+  margin-bottom: 5px;
+}
+
+.poster {
+  margin: 0 auto;
+}
+
+.poster img {
+  margin: 0 auto;
+  width: 80%;
+}

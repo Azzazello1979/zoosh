@@ -1,0 +1,43 @@
+$link: #0A6447;
+
+@mixin centered{
+    margin:0 auto;
+}
+
+.my-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    min-width:180px;
+}
+.my-image{
+    width: 200px !important;
+    margin: 20px auto 0px auto;
+}
+.my-title{
+    font-weight:bold;
+}
+.wikiLinks{
+    margin-top:30px;
+    text-align:left;
+}
+.wikiLinks a{
+    color: $link;
+    &:hover{
+        color: lighten($link, 30);
+    }
+    &:visited{
+        color: darken($link, 30);
+    }
+    
+}
+.wikiLinks li{
+    margin-bottom: 5px;
+}
+.poster{
+    @include centered;
+}
+.poster img{
+    @include centered;
+    width: 80%;
+}
