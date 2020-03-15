@@ -19,7 +19,8 @@ const ResultCard = props => {
     
     axios.get(`${herokuProxy}${wikipediaServer}${wikiQuery}"${title}"`)
     .then(wikiResponse => {
-      console.log(wikiResponse)
+      //console.log(wikiResponse.data[3]);
+      props.addWiki(id, wikiResponse.data[3]);
     })
     .catch(error => {
       return console.log('error with wiki query: ', error.message)

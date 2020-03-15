@@ -25,12 +25,16 @@ class App extends Component {
     });
   };
 
+  addWiki = (id, wikiArray) => {
+    console.log(`App.js: movie id is ${id} and wikiArray is ${wikiArray}`);
+  }
+
   render() {
     return (
       
         <div className="App container">
           <Search store={this.storeResult} />
-          <Listing results={this.state.results} remove={this.removeMovie} />
+          <Listing results={this.state.results} remove={this.removeMovie} addWiki={this.addWiki} />
         </div>
       
     );

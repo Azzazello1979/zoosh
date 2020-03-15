@@ -7,6 +7,12 @@ const Listing = props => {
   const remove = id => {
     props.remove(id);
   }
+
+  const addWiki = (id, wikiArray) => {
+    //console.log('Listing.jsx: ', wikiArray);
+    props.addWiki(id, wikiArray);
+  }
+
     return (
       <div className="container">
         <h6>
@@ -17,7 +23,7 @@ const Listing = props => {
         <div className="row">
           <div className="col s10 offset-s1">
             {results.map(result => {
-              return <ResultCard result={result} key={result.imdbID} remove={remove}/>;
+              return <ResultCard result={result} key={result.imdbID} remove={remove} addWiki={addWiki}/>;
             })}
           </div>
         </div>
