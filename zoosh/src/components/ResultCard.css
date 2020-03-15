@@ -1,3 +1,5 @@
+
 .my-image{
-    width: 300px;
+    width: 200px !important;
+    margin: 10px auto 0px auto;
 }

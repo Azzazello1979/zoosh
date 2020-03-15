@@ -7,7 +7,7 @@ const ResultCard = props => {
 
   
   return (
-    <div className="card">
+    <div className="card my-card">
       <div className="card-image waves-effect waves-block waves-light">
         <img className="activator my-image" src={process.env.PUBLIC_URL + result.coverImg} alt="" />
       </div>

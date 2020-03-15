@@ -6,9 +6,9 @@ import Listing from "./components/Listing";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Search />
-        <Listing />
+      <div className="App container">
+            <Search />
+            <Listing />
       </div>
     );
   }

@@ -7,8 +7,12 @@ class Search extends Component {
     return (
       <div className="container">
         <form>
-          <input type="text" name="movie" placeholder="enter movie title" />
-          <button type="submit" name="submit" className="btn pulse">Search Movies</button>
+          <div className="input-field">
+            <input type="text" name="movie" placeholder="enter movie title" />
+          </div>
+          <div className="input-field">
+            <button type="submit" name="submit" className="btn pulse">Search Movies</button>
+          </div>
         </form>
       </div>
     );
