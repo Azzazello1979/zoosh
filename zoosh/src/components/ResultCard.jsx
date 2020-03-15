@@ -37,6 +37,11 @@ const ResultCard = props => {
     })
   }
 
+  let poster = <img src={result.Poster} alt="movie poster" />;
+  if(result.Poster === 'N/A'){
+    poster = '';
+  }
+
   return (
     <div className="card my-card">
       <button className="btn remove" onClick={ () => remove(result.imdbID) }>remove</button>
@@ -56,7 +61,7 @@ const ResultCard = props => {
         <span className="card-title grey-text text-darken-4">
           <i className="material-icons right">close</i>
           <p className="my-title">{result.Title}</p>
-          <div className="poster"><img src={result.Poster} alt="movie poster" /></div>
+          <div className="poster">{poster}</div>
         </span>
         <p>{result.Plot}</p>
         <span>
