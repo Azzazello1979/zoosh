@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App container">
             <Search store={this.storeResult} />
-            <Listing />
+            <Listing results={this.state.results} />
       </div>
     );
   }
