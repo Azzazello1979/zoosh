@@ -1,5 +1,10 @@
+.my-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
 
 .my-image{
     width: 200px !important;
-    margin: 10px auto 0px auto;
+    margin: 20px auto 0px auto;
 }

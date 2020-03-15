@@ -5,8 +5,13 @@ import CoverImg from "./../img/mov.jpg";
 const ResultCard = props => {
   const { result } = props;
 
+  const remove = id => {
+    console.log('remove id: ', id);
+  }
+
   return (
     <div className="card my-card">
+      <button className="btn remove" onClick={ () => remove(result.imdbID) }>remove</button>
       <div className="card-image waves-effect waves-block waves-light">
         <img className="activator my-image" src={CoverImg} alt="" />
       </div>
@@ -24,7 +29,12 @@ const ResultCard = props => {
           {result.Title}
           <i className="material-icons right">close</i>
         </span>
-        <p className="trim">{result.Plot}</p>
+        <p>{result.Plot}</p>
+        <span>
+          <a href="https://en.wikipedia.org/wiki/Intacto" target="_blank">
+            Read more about {result.Title} on wikipedia...
+          </a>
+        </span>
       </div>
     </div>
   );

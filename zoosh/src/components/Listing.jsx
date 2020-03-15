@@ -13,7 +13,7 @@ const Listing = props => {
         <div className="row">
           <div className="col s10 offset-s1">
             {results.map(result => {
-              return <ResultCard result={result} key={result.id} />;
+              return <ResultCard result={result} key={result.imdbID} />;
             })}
           </div>
         </div>
