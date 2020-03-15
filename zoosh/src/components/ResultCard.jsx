@@ -15,9 +15,9 @@ const ResultCard = props => {
 
     const herokuProxy = 'https://cors-anywhere.herokuapp.com/';
     const wikipediaServer = 'https://en.wikipedia.org/w/api.php';
-    const wikiQuery = '?format=json&action=query&prop=extracts&titles=';
+    const wikiQuery = '?action=opensearch&format=json&search=';
     
-    axios.get(`${herokuProxy}${wikipediaServer}${wikiQuery}"${title}"&redirects=true`)
+    axios.get(`${herokuProxy}${wikipediaServer}${wikiQuery}"${title}"`)
     .then(wikiResponse => {
       console.log(wikiResponse)
     })
