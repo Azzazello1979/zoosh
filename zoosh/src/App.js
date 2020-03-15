@@ -17,11 +17,19 @@ class App extends Component {
     console.log('App.js: ', this.state.results);
   }
 
+  removeMovie = id => {
+    const currentMovies = [...this.state.results];
+    const updatedMovies = currentMovies.filter(movie => movie.imdbID != id);
+    this.setState({
+      results: updatedMovies
+    });
+  }
+
   render() {
     return (
       <div className="App container">
             <Search store={this.storeResult} />
-            <Listing results={this.state.results} />
+            <Listing results={this.state.results} remove={this.removeMovie}/>
       </div>
     );
   }

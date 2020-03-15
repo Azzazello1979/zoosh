@@ -6,7 +6,7 @@ const ResultCard = props => {
   const { result } = props;
 
   const remove = id => {
-    console.log('remove id: ', id);
+    props.remove(id);
   }
 
   return (
