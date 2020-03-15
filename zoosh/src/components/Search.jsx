@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import progressAnim from "./../img/progress.gif";
-import "./Search.css";
 
 class Search extends Component {
   state = {
@@ -18,7 +17,7 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.progress = 'my-progress-visible';
+    this.progress = 'my-progress-on';
     axios
       .get(
         `http://www.omdbapi.com/?i=tt3896198&apikey=529dae3d&t=${this.state.movie}&plot=full`

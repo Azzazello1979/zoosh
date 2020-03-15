@@ -2,19 +2,15 @@ import React from "react";
 import "./ResultCard.css";
 import CoverImg from "./../img/mov.jpg";
 import axios from 'axios';
-import progressAnim from "./../img/progress.gif";
 
 const ResultCard = props => {
   const { result } = props;
-
-  let progress = 'my-progress-off';
 
   const remove = id => {
     props.remove(id);
   }
 
   const moreInfo = (id, title) => {
-    progress = 'my-progress-on';
 
     const herokuProxy = 'https://cors-anywhere.herokuapp.com/';
     const wikipediaServer = 'https://en.wikipedia.org/w/api.php';
@@ -22,7 +18,6 @@ const ResultCard = props => {
     
     axios.get(`${herokuProxy}${wikipediaServer}${wikiQuery}"${title}"`)
     .then(wikiResponse => {
-      progress = 'my-progress-off';
       props.addWiki(id, wikiResponse.data[3]);
     })
     .catch(error => {
@@ -34,7 +29,7 @@ const ResultCard = props => {
   if(result.wikiArray === undefined){
      wikiLinks = ''         
   } else {
-    wikiLinks = result.wikiArray.map(wikiLink => {
+    wikiLinks = result.wikiArray.map((wikiLink, index) => {
       return(
         <a href={wikiLink} target="_blank" rel="noopener noreferrer"><li>{wikiLink}</li></a>
       )
@@ -65,9 +60,10 @@ const ResultCard = props => {
         <span>
           <button type="button" className="btn" onClick={() => moreInfo(result.imdbID, result.Title) }>More about {result.Title} by wikipedia</button>
         </span>
-        <div><img className={progress} src={progressAnim} alt="loading" /></div>
         <div className="wikiLinks">
-          <ol>{wikiLinks}</ol>
+          <ol>
+            {wikiLinks}
+          </ol>
         </div>
       </div>
     </div>

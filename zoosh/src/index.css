@@ -13,3 +13,10 @@ code {
 }
 
 
+.my-progress-on{
+  display:inline;
+  
+}
+.my-progress-off{
+  display:none;
+}

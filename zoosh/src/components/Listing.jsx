@@ -4,8 +4,6 @@ import ResultCard from "./ResultCard";
 const Listing = props => {
   const { results } = props;
 
-  console.log('Listing.jsx results: ', results);
-
   let note = results.length > 0 ? ('results: ' + results.length) : 'search above';
 
   const remove = id => {
