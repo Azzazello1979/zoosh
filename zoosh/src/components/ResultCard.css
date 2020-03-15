@@ -12,3 +12,15 @@
 .my-title{
     font-weight:bold;
 }
+
+.wikiLinks{
+    margin-top:30px;
+}
+
+.my-progress-off{
+    display:none;
+}
+
+.my-progress-on{
+    display:block;
+}

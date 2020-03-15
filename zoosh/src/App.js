@@ -5,17 +5,24 @@ import Listing from "./components/Listing";
 
 class App extends Component {
   state = {
-    results: []
+    results: [],
+    movIDs: []
   };
 
   storeResult = result => {
-    const current = [...this.state.results];
-    current.unshift(result);
+    let currentMovies = [...this.state.results];
+    let currentMovIDs = [...this.state.movIDs];
+
+    if(!currentMovIDs.includes(result.imdbID)){
+      currentMovIDs.push(result.imdbID);
+      currentMovies.unshift(result);
+    };
+    
     this.setState({
-      results: current
+      results: currentMovies,
+      movIDs: currentMovIDs
     });
-    console.log("App.js movies: ", this.state.results);
-    console.log("App.js movieArr length: ", this.state.results.length);
+
   };
 
   removeMovie = id => {
@@ -29,24 +36,26 @@ class App extends Component {
   addWiki = (id, wikiArray) => {
     const currentMovies = [...this.state.results];
     currentMovies.forEach(cMovie => {
-      if(cMovie.imdbID === id){
-        cMovie['wikiArray'] = wikiArray
+      if (cMovie.imdbID === id) {
+        cMovie["wikiArray"] = wikiArray;
       }
     });
     this.setState({
       results: currentMovies
     });
-    console.log('App.js currentMovies: ', this.state.results);
-  }
+    console.log("App.js currentMovies: ", this.state.results);
+  };
 
   render() {
     return (
-      
-        <div className="App container">
-          <Search store={this.storeResult} />
-          <Listing results={this.state.results} remove={this.removeMovie} addWiki={this.addWiki} />
-        </div>
-      
+      <div className="App container">
+        <Search store={this.storeResult} />
+        <Listing
+          results={this.state.results}
+          remove={this.removeMovie}
+          addWiki={this.addWiki}
+        />
+      </div>
     );
   }
 }
