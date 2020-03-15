@@ -35,7 +35,7 @@ const ResultCard = props => {
       </div>
       <div className="card-content">
         <span className="card-title activator grey-text text-darken-4">
-          {result.Title}
+          <p className="my-title">{result.Title}</p>
           <i className="material-icons right">more_vert</i>
         </span>
         <p>
@@ -44,12 +44,12 @@ const ResultCard = props => {
       </div>
       <div className="card-reveal">
         <span className="card-title grey-text text-darken-4">
-          {result.Title}
+          <p className="my-title">{result.Title}</p>
           <i className="material-icons right">close</i>
         </span>
         <p>{result.Plot}</p>
         <span>
-          <button type="button" onClick={() => moreInfo(result.imdbID, result.Title) }>More about {result.Title} by wikipedia</button>
+          <button type="button" className="btn" onClick={() => moreInfo(result.imdbID, result.Title) }>More about {result.Title} by wikipedia</button>
         </span>
       </div>
     </div>

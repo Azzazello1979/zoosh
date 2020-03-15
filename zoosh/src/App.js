@@ -14,7 +14,8 @@ class App extends Component {
     this.setState({
       results: current
     });
-    console.log("App.js: ", this.state.results);
+    console.log("App.js movies: ", this.state.results);
+    console.log("App.js movieArr length: ", this.state.results.length);
   };
 
   removeMovie = id => {
@@ -26,7 +27,16 @@ class App extends Component {
   };
 
   addWiki = (id, wikiArray) => {
-    console.log(`App.js: movie id is ${id} and wikiArray is ${wikiArray}`);
+    const currentMovies = [...this.state.results];
+    currentMovies.forEach(cMovie => {
+      if(cMovie.imdbID === id){
+        cMovie['wikiArray'] = wikiArray
+      }
+    });
+    this.setState({
+      results: currentMovies
+    });
+    console.log('App.js currentMovies: ', this.state.results);
   }
 
   render() {
