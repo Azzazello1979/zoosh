@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ResultCard from "./ResultCard";
 
+
+
 class Listing extends Component {
   state = {
     results: [
@@ -8,19 +10,19 @@ class Listing extends Component {
         id: 1,
         title: "Drakula Returns",
         desc: "...blahblahblah...",
-        coverImg: "img/mov.jpg"
+        
       },
       {
         id: 2,
         title: "Toy Story 87",
         desc: "...blahblahblah...",
-        coverImg: "img/mov.jpg"
+        
       },
       {
         id: 3,
         title: "Shutter Islands",
         desc: "...blahblahblah...",
-        coverImg: "img/mov.jpg"
+        
       }
     ]
   };

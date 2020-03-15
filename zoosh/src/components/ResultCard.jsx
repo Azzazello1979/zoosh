@@ -1,5 +1,6 @@
 import React from "react";
 import "./ResultCard.css";
+import CoverImg from "./../img/mov.jpg";
 
 
 const ResultCard = props => {
@@ -9,7 +10,7 @@ const ResultCard = props => {
   return (
     <div className="card my-card">
       <div className="card-image waves-effect waves-block waves-light">
-        <img className="activator my-image" src={process.env.PUBLIC_URL + result.coverImg} alt="" />
+        <img className="activator my-image" src={CoverImg} alt="" />
       </div>
       <div className="card-content">
         <span className="card-title activator grey-text text-darken-4">
@@ -17,7 +18,7 @@ const ResultCard = props => {
           <i className="material-icons right">more_vert</i>
         </span>
         <p>
-          <a href="#">This is a link</a>
+          link here
         </p>
       </div>
       <div className="card-reveal">
