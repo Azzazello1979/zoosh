@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 class Search extends Component {
   state = {
@@ -13,8 +14,14 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // console.log(this.state);
-    // call IMDB api
+    
+    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=529dae3d&t=${this.state.movie}`)
+    .then(response => {
+      console.log(response.data)
+    })
+    .catch(error => {
+      return console.log('omdbapi call error: ', error.message)
+    }) 
 
     this.setState({
       movie: ""
