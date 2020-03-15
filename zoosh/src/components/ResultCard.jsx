@@ -1,6 +1,8 @@
 import React from "react";
 import "./ResultCard.css";
 import CoverImg from "./../img/mov.jpg";
+import Details from "./Details";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const ResultCard = props => {
   const { result } = props;
@@ -31,9 +33,14 @@ const ResultCard = props => {
         </span>
         <p>{result.Plot}</p>
         <span>
-          <a href="https://en.wikipedia.org/wiki/Intacto" target="_blank">
+          
+          <BrowserRouter>
+          <Route path="/details" component={Details} />
+          <Link to={ `/details?wiki=${result.Title}` } target="_blank">
             Read more about {result.Title} on wikipedia...
-          </a>
+          </Link>
+          </BrowserRouter>
+
         </span>
       </div>
     </div>
