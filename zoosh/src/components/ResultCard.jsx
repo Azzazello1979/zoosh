@@ -1,14 +1,29 @@
 import React from "react";
 import "./ResultCard.css";
 import CoverImg from "./../img/mov.jpg";
-import Details from "./Details";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import axios from 'axios';
 
 const ResultCard = props => {
   const { result } = props;
 
   const remove = id => {
     props.remove(id);
+  }
+
+  const moreInfo = (id, title) => {
+    //console.log(`moreInfo: id: ${id} title: ${title}`);
+
+    const herokuProxy = 'https://cors-anywhere.herokuapp.com/';
+    const wikipediaServer = 'https://en.wikipedia.org/w/api.php';
+    const wikiQuery = '?format=json&action=query&prop=extracts&titles=';
+    
+    axios.get(`${herokuProxy}${wikipediaServer}${wikiQuery}"${title}"&redirects=true`)
+    .then(wikiResponse => {
+      console.log(wikiResponse)
+    })
+    .catch(error => {
+      return console.log('error with wiki query: ', error.message)
+    })
   }
 
   return (
@@ -33,14 +48,7 @@ const ResultCard = props => {
         </span>
         <p>{result.Plot}</p>
         <span>
-          
-          <BrowserRouter>
-          <Route path="/details" component={Details} />
-          <Link to={ `/details?wiki=${result.Title}` } target="_blank">
-            Read more about {result.Title} on wikipedia...
-          </Link>
-          </BrowserRouter>
-
+          <button type="button" onClick={() => moreInfo(result.imdbID, result.Title) }>More about {result.Title} by wikipedia</button>
         </span>
       </div>
     </div>

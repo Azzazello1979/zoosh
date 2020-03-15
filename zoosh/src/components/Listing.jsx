@@ -3,7 +3,7 @@ import ResultCard from "./ResultCard";
 
 const Listing = props => {
   const { results } = props;
-  
+
   const remove = id => {
     props.remove(id);
   }

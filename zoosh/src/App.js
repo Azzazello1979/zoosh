@@ -27,10 +27,12 @@ class App extends Component {
 
   render() {
     return (
+      
         <div className="App container">
           <Search store={this.storeResult} />
           <Listing results={this.state.results} remove={this.removeMovie} />
         </div>
+      
     );
   }
 }
