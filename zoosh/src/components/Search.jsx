@@ -20,7 +20,7 @@ class Search extends Component {
     this.progress = 'my-progress-on';
     axios
       .get(
-        `http://www.omdbapi.com/?i=tt3896198&apikey=529dae3d&t=${this.state.movie}&plot=full`
+        `https://www.omdbapi.com/?i=tt3896198&apikey=529dae3d&t=${this.state.movie}&plot=full`
       )
       .then(response => {
         this.progress = 'my-progress-off';
