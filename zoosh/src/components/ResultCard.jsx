@@ -32,7 +32,7 @@ const ResultCard = props => {
   } else {
     wikiLinks = result.wikiArray.map((wikiLink, index) => {
       return(
-        <a href={wikiLink} target="_blank" rel="noopener noreferrer"><li key={ `${wikiLink}_${index}` }>{wikiLink}</li></a>
+        <a href={wikiLink} target="_blank" rel="noopener noreferrer"><li key={ `${wikiLink}_${index}` }>{wikiLink.replace('https://en.wikipedia.org/wiki/', '')}</li></a>
       )
     })
   }
@@ -68,9 +68,9 @@ const ResultCard = props => {
           <button type="button" className="btn" onClick={() => moreInfo(result.imdbID, result.Title) }>More about {result.Title} by wikipedia</button>
         </span>
         <div className="wikiLinks">
-          <ol>
+          <ul>
             {wikiLinks}
-          </ol>
+          </ul>
         </div>
       </div>
     </div>
